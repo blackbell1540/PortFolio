@@ -1,0 +1,8 @@
+## node modules
+node_modules/*
+
+## dist
+dist/*
+
+## error log
+yarn-error.log
