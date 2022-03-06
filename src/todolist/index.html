@@ -7,7 +7,12 @@
   </head>
   <body>
     <div>
-      새로운 할 일: <input type="text" id="newItemInput">
+      <select id="newItemTypeSelect">
+        <option value="todoList" selected>Todo</option>
+        <option value="doingList">Doing</option>
+        <option value="doneList">Done</option>
+      </select>
+      : <input type="text" id="newItemInput">
       <button id="addNewItemButton">추가</button>
     </div>
 

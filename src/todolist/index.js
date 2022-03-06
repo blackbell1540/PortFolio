@@ -4,9 +4,18 @@ window.onload = () => {
 }
 
 const onClickAddNewItemButton = (e) => {
+    const newItemTypeSelect = document.getElementById('newItemTypeSelect');
     const newItemInput = document.getElementById('newItemInput');
-    addNewItem('todoList', newItemInput.value);
+    addNewItem(newItemTypeSelect.value, newItemInput.value);
+    initNewItemInput();
+}
+
+const initNewItemInput = () => {
+    const newItemTypeSelect = document.getElementById('newItemTypeSelect');
+    const newItemInput = document.getElementById('newItemInput');
+
     newItemInput.value = '';
+    newItemTypeSelect.value = 'todoList';
 }
 
 const addNewItem = (listType, content) => {
