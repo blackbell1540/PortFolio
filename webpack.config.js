@@ -4,29 +4,36 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        main: './src/index.js',
-        'todolist/main': './src/todolist/index.js'
+        main: {
+            import: './src/index.js',
+        },
+        todolist: {
+            import: './src/todolist/index.js',
+        }
     },
     output: {
-        filename: '[name].js',
+        filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
     devServer: {
         hot: true,
         watchFiles: [
-            'src/*'
+            'src/*',
+            'src/todolist/*'
         ],
         port: 9000
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './src/todolist/index.html',
-            filename: '/todolist/index.html'
+            filename: 'todolist/index.html',
+            chunks: ['todolist']
         }),
     ],
     module: {
