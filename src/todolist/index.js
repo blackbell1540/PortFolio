@@ -1,3 +1,5 @@
+import Style from './index.css';
+
 class List {
     listType = '';
     items = [];
@@ -35,6 +37,7 @@ class List {
         const newItemElement = document.createElement('div');
         newItemElement.innerHTML = content;
         newItemElement.id = id;
+        newItemElement.className = 'list-item';
         newItemElement.listType = this.listType;
     
         const deleteButton = document.createElement('span');
